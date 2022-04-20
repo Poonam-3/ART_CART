@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The art cart website design</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav{
+           
+            height: 100px;
+        }
+       
+        nav ul{
+           
+            list-style-type: none;
+            overflow: hidden;
+
+        }
+        nav ul li{
+            display: inline-block;
+            float: left;
+            
+           
+        }
+
+        li a{
+            display: inline-block;
+            text-decoration: none;
+            padding: 0 20px 0 35px;
+            
+        }
+       
+        
+        ul li a .icon{
+            text-align: center;
+            overflow: hidden;
+            width: 40px;
+            height: 35px;
+            color: black;
+            font-size: 25px;
+            padding-left: 3px;
+           
+        }
+        ul li a .name{
+            text-align: center;
+            font-family: serif;
+            color: black;
+            font-size: 15px;
+            padding-left: 3px;
+        }
+        ul li a .icon .fa{
+           
+            transition-duration: 0.5s;
+        }
+        ul li a:hover .icon .fa{  
+            transform: translateY(-100%);
+        }
+       
+        .box{
+            width: 180px;
+            background-color: white; 
+             display: flex;
+             text-align: center;
+        }
+        .box > i{
+            font-size: 15px;
+            color: black;
+            padding-top: 12px;
+            padding-left: 12px;
+        }
+        .box > input{
+            flex: 1;
+            height: 30px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            
+        }  
+        p{
+            color: #555;
+        }
+        .col-2{
+            padding-left: 55px;
+        }
+        .row{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+           
+        }
+        /* header{
+            background: linear-gradient(rgb(51, 197, 197));
+        } */
+        .col-2{
+            /* flex-basis: 50%; */
+            min-width: 300px;
+            font-family: 'Times New Roman';
+            line-height: 20px;
+        }
+        .col-2 img{
+            /* max-width: 100%; */
+            padding: 10px 0;
+        }
+        .col-2 h1{
+            font-size: 50px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+        .btn{
+            display: inline-block;
+            background: mediumturquoise;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+        }
+        
+        .col-4{
+             flex-basis: 25%;
+             padding: 10px;
+            min-width: 200px;
+            margin-bottom:50px ; 
+        }
+        .col-3 img{
+            width: 100%;
+            border: 3px solid mediumturquoise;
+            transition: transform 0.5s;
+        }
+         .scontainer{   
+            padding: 20px;
+            margin: auto;
+           
+        }
+        .sale{
+            text-align: center;
+            margin: 0 auto 40px;
+            position: relative;
+            line-height: 40px;
+            color: mediumturquoise;
+        }
+        h4{
+            text-align: center;
+        }
+        .rating{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            font-size: 15px;
+        }
+        .btn2{
+            display: inline-block;
+            background: mediumturquoise;
+            color: #fff;
+            padding: 8px 30px;
+            margin: 30px 0;
+            border-radius: 30px;
+            margin-left: 550px;
+            margin-right: 400px;
+            text-decoration: none;
+        }
+        .col-3:hover{
+            transform: translateY(-5px);
+        }
+        .footer{
+            background: black;
+            color: whitesmoke;
+            padding: 60px 0 20px;
+            font-size: 14px;
+        }
+        .f-col-1{
+            flex-basis: 50%;
+            margin-bottom: 20px;
+        }
+        .f-col-2{
+            flex-basis: 50%;
+            margin-bottom: 20px;
+        }
+       
+        .dropdown-content2{
+            display: none;
+        }
+        .navbar ul li:hover .dropdown-content2{
+            display: block;
+            position: absolute;
+            background:black;
+            margin-top: 15px;
+            margin-left: -15px;
+        }
+        .navbar ul li:hover .dropdown-content2 ul {
+            position:absolute;
+            display: block;
+            background:black;
+            margin: 10px;
+        }
+        .navbar ul li:hover .dropdown-content2 ul li{
+            display: block;
+            margin: 10px;
+            width: 150px;
+            padding: 10px;
+            border-bottom: 1px solid white;
+            text-align: left;
+            color: white;
+        }
+    </style>
+</head>
+ <body>
+    
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+        
+    <div>
+        <ul class="navbar-brand">
+            <li style="font-family:'Times New Roman'; color: mediumturquoise;padding-left: 35px; padding-top: 10px ; font-size: 35px;">THE ART CART</li>
+        </ul>
+   </div>
+
+       
+           <!-- <li class="nav-item"  style="padding-left: 25px;"><input type="text" class="form-control" placeholder="Search..."></li> -->
+           <div class="box">
+            <i class="fa fa-search" aria-hidden="true"></i>
+               <input type="text" name="" placeholder="Search.." style="padding-left: 8px;">
+           </div>
+        
+        
+       
+    
+    <div>
+        <ul>
+        <li><a href="#">
+            <div class="icon">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </div>
+                <div class="name" data-text="home">Home</div>
+           </a>
+
+        </li>
+       
+        <li><a href="#">
+            <div class="icon">
+                
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </div>
+                <div class="name" data-text="profile">Profile</div>
+           </a>
+           <div class="dropdown-content2">
+               <ul>
+                   <li><a href="web1.html">Name</a></li>
+                   <li><a href="web1.html">Email Id</a></li>
+                   <li><a href="web1.html">Contact</a></li>
+               </ul>
+           </div>
+        </li>
+        <li><a href="#">
+            <div class="icon">
+                
+                <i class="fa fa-bell" aria-hidden="true"></i>
+                <i class="fa fa-bell" aria-hidden="true"></i>
+
+            </div>
+                <div class="name" data-text="alert">Notification</div>
+           </a>
+          
+        </li>
+        <li><a href="#">
+            <div class="icon">
+                
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+
+            </div>
+                <div class="name" data-text="alert">Favourite</div>
+           </a>
+        </li>
+        <li><a href="#">
+            <div class="icon">
+                
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </div>
+            <div class="name" data-text="bag">Cart</div> 
+           </a>
+        </li>
+       
+        <li >
+            <a href="#" >
+            <div class="icon">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                
+            </div>
+                <div class="name" data-text="settings">Settings</div> 
+            </a>
+            <div class="dropdown-content2">
+                <ul>
+                    <li><a href="web1.html">Return Policy</a></li>
+                    <li><a href="web1.html">Payment</a></li>
+                    <li><a href="web1.html">Contact Us</a></li>
+                </ul>
+            </div>
+          
+        </li>
+   
+    </ul>
+       
+      </div>
+    </nav>
+
+
+    <div class="header">
+    <div class="row">
+        <div class="col-2">
+            <h1>A <br>Stroke of<br> Excellence!</h1>
+            <p>"ALL YOU NEED TO PAINT IS A FEW TOOLS, A LITTLE INSTRUCTION, AND A VISION IN YOUR MIND..."</p>
+            <a href="web1.html" class="btn">Explore Now &#8594;</a>
+        </div>
+        <div class="col-2">
+            <img src="human-head.jpg" alt="" height="500px" width="900px">
+        </div>
+    </div>
+</div>
+        
+
+<!---------------- featured--------- -->
+<div class="categories">
+    <div class="scontainer">
+        <h2 class="sale">SALE on Featured Products</h2>
+        <div class="row">
+            <div class="col-3">
+             <img src="wclr.jpeg" alt="" >
+             <h4>Watercolour Painting</h4>
+             <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             </div>
+             <p>₹<del>1000</del><br>₹500</p>
+            </div>
+            <div class="col-3">
+               <img src="mandala2.jpeg" alt="" >
+               <h4>Mandala Art</h4>
+               <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             </div>
+             <p>₹<del>3000</del><br>₹2500</p>
+            </div>
+            <div class="col-3">
+                <img src="acrylic.jpeg" alt="" style="float: right;">
+                <h4>Acrylic Painting</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                 </div>
+             <p>₹<del>2500</del><br>₹2000</p>
+            </div>
+            <div class="col-3">
+                <img src="bottle art2.jpeg" alt="" style="float: right;">
+                <h4>Bottle Painting</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                 </div>
+             <p>₹<del>2000</del><br>₹1500</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+   
+
+
+<div class="categories">
+    <div class="scontainer">
+        <h2 class="sale">RECENT PRODUCTS</h2>
+        <div class="row">
+            <div class="col-3">
+             <img src="krish.jpeg" alt="" >
+             <h4>Krishna Painting</h4>
+             <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             </div>
+             <p>₹5000</p>
+            </div>
+            <div class="col-3">
+               <img src="lion.jpeg" alt="" >
+               <h4>Stippling Art</h4>
+               <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             </div>
+             <p>₹1000</p>
+            </div>
+            <div class="col-3">
+                <img src="btrfly2.jpeg" alt="" style="float: right;">
+                <h4>Butterfly Painting</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                 </div>
+             <p>₹2500</p>
+            </div>
+            <div class="col-3">
+                <img src="wp2.jpeg" alt="" style="float: right;">
+                <h4>Floral Painting</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                 </div>
+             <p>₹2000</p>
+            </div>
+        
+        <div class="col-3">
+            <img src="flower.jpeg" alt="" style="float: right;">
+            <h4>Floral Painting</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             </div>
+         <p>₹4000</p>
+        </div>
+        <div class="col-3">
+            <img src="gan.jpeg" alt="" style="float: right;">
+            <h4>Ganesha Painting</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             </div>
+         <p>₹2500</p>
+        </div>
+        <div class="col-3">
+            <img src="hat.jpeg" alt="" style="float: right;">
+            <h4>Hat Painting</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             </div>
+         <p>₹1000</p>
+        </div>
+        <div class="col-3">
+            <img src="flo2.jpeg" alt="" style="float: right;">
+            <h4>Floral Painting</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+             </div>
+         <p>₹2000</p>
+        </div>
+
+    </div>
+
+</div>
+</div>
+<div class="button">
+<a href="web1.html" class="btn2"><b>SHOW MORE</b></a>
+</div>
+
+<!------------------- footer -->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="f-col-1">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+            <div class="f-col-2">
+                <h3>Help</h3>
+                <ul>
+                    <li>Returns</li>
+                    <li>Cancellations</li>
+                    <li>Payments</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   
+            
+        
+    
+</div>
+
+     
+   
+</body>
+</html>
